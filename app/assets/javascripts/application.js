@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.poptrox.min
+//= require main
+//= require skel.min
+//= require util
 //= require turbolinks
 //= require_tree .
