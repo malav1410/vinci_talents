@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 	get '/profile/submit' => 'profile#create'
+	post '/profile/thank_you' => 'profile#submitted'
 
   get 'welcome/index'  
 

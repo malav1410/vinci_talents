@@ -2902,7 +2902,7 @@
 
 	body {
 		background-color: #1e1f23;
-		padding-top: 8rem;
+		padding-top: 4rem;
 	}
 
 		body.is-loading:after {
@@ -2920,7 +2920,8 @@
 			-ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
 			transition: opacity 1.5s ease-in-out, visibility 1.5s;
 			content: '';
-			background-image: url(bg.jpg);
+			/* background-image: url(bg.jpg); */
+			background: black;
 			background-attachment: fixed;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -2955,9 +2956,12 @@
 	}
 
 		#header > .logo {
-			margin: 0 0 4rem 0;
+			margin: 0 0 2rem 0;
 			padding: 0;
 		}
+			#header > .logo img {
+				width: 50%;
+			}
 
 			#header > .logo a {
 				font-size: 4rem;
