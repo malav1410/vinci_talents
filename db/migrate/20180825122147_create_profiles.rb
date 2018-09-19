@@ -4,8 +4,10 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       t.string :first_name
       t.string :last_name
       t.string :email
-      t.integer :number, :limit => 8
+      t.integer :mobile, :limit => 8
       t.boolean :status
+      t.integer :age
+      t.boolean :blocked
 
       t.timestamps
     end

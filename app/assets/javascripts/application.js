@@ -17,4 +17,5 @@
 //= require skel.min
 //= require util
 //= require turbolinks
+//= app
 //= require_tree .

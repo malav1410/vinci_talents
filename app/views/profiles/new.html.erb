@@ -1,0 +1,69 @@
+<header id="header">
+	<div class="logo"><img src="/assets/logo-3.png">
+	<!-- ><a href="#">Vinci Talents<span>by Malav</span></a> -->
+	</div>
+</header>
+<section id="main" ng-controller="TodoListController" ng-init="init()">
+	<div class="inner">
+		<section id="one" class="wrapper style1">
+			
+			<header class="special">
+				<h2>Profile</h2>
+				<p>Vinci talents</p>
+			</header>
+			<div class="content">
+				<!-- Simple Form -->
+					<%= simple_form_for @profile do |f| %>
+
+						<%= f.error_notification %>
+
+					  <%= f.input :first_name, label: false, placeholder: 'First Name', required: true %>
+
+					  <%= f.input :last_name, label: false, placeholder: 'Last Name', required: true %>
+
+					  <%= f.input :email, label: false, placeholder: 'Email', required: true %>
+
+					  <%= f.input :mobile, label: false, placeholder: 'Mobile Number', boolean_style: :inline, input_html: { class: "mr-sm-2" }, required: true %>
+
+					  <%= f.input :age, label: false, placeholder: 'Age', boolean_style: :inline ,input_html: { class: "mr-sm-2" }, required: true %>
+
+					  <div style="margin-bottom: 20px">
+					  	<a href="#" ng-click="togglePhotos()"> Add Photos ( You can add upto 6 photos )</a>
+					  </div>
+
+					  <div ng-if="addPhotos">
+					  	<%= f.input :photo_1, label: false, as: :file %>
+					  	<%= f.input :photo_2, label: false, as: :file %>
+					  	<%= f.input :photo_3, label: false, as: :file %>
+					  </div>
+
+					  <div style="margin-bottom: 20px">
+					  	<a href="#" ng-click="toggleVideos()"> Add Videos ( You can add upto 2 videos )</a>
+					  </div>
+
+					  <div ng-if="addVideos">
+					  	<%= f.input :video_1, label: false, as: :file %>
+					  	<%= f.input :video_2, label: false, as: :file %>
+					  </div>
+					  
+
+					  <%= f.button :submit %>
+					<% end %>
+				<!-- Form -->						
+			</div>
+		</section>
+	</div>
+</section>
+<footer id="footer">
+	<div class="container">
+		<ul class="icons">
+			<li><a href="https://www.youtube.com/channel/UC7B9pBklBtKUsNZHw4NKiZQ" class="icon"><i class="fab fa-youtube fa-3x"></i><span class="label">Twitter</span></a></li>
+			<li><a href="https://www.facebook.com/people/Vinci-Talents/100015233298288" class="icon"><i class="fab fa-facebook fa-3x"></i><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon"><i class="fab fa-instagram fa-3x"></i><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon"><i class="fas fa-envelope fa-3x"></i><span class="label">Email</span></a></li>
+		</ul>
+	</div>
+	<div class="copyright">
+		&copy; Vinci Talents. All rights reserved.
+	</div>
+</footer>
