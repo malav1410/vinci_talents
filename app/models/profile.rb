@@ -60,7 +60,7 @@ class Profile < ApplicationRecord
 	has_attached_file :video_1
 	has_attached_file :video_2
 
- validates :first_name, :last_name, :email, :mobile, :age, presence: true
+ validates :first_name, :last_name, :email, :mobile, :age, presence: false
  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
  validates :age, numericality: { greater_than: 0 }
  validates_length_of :mobile, minimum: 10, maximum: 10
