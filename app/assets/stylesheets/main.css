@@ -2920,8 +2920,10 @@
 			-ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
 			transition: opacity 1.5s ease-in-out, visibility 1.5s;
 			content: '';
-			/* background-image: url(bg.jpg); */
-			background: black;
+			background-image: url(vinci-background-1.png);
+			/*background: black;*/
+			filter: blur(2px);
+  			-webkit-filter: blur(2px);
 			background-attachment: fixed;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -2993,6 +2995,22 @@
 
 		#header > .logo {
 			margin: 0 0 2rem 0;
+		}
+
+		#header > .logo a {
+			font-size: 3rem;
+		}
+
+		#header > .logo img {
+			width: 85%;
+		}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		#header > .logo {
+			margin: 0 0 1rem 0;
 		}
 
 			#header > .logo a {
@@ -3111,7 +3129,7 @@
 		}
 
 	.wrapper.style2 {
-		background: #1e1f23;
+		background: #121315;
 		padding: 6rem;
 	}
 

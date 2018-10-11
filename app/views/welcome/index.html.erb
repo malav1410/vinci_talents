@@ -1,8 +1,57 @@
+<style>
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10002;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  }
 
+  .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+      color: #f1f1f1;
+  }
+
+  .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+</style>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#about">About</a>
+  <a href="#ourworks">Our Works</a>
+  <a href="#service">Services</a>
+  <!-- <a href="#news">News / Trending section</a> -->
+</div> 
+
+<span style="font-size:30px;cursor:pointer; color: white; margin-left: 35px; position: fixed; top: 20px" onclick="openNav()">&#9776;</span>
 
 		<!-- Header -->
 			<header id="header">
-				<div class="logo"><img src="/assets/logo-3.png">
+				<div class="logo">
+					<a href="/"><img src="/assets/logo-3.png"></a>
 				<!-- ><a href="#">Vinci Talents<span>by Malav</span></a> -->
 				</div>
 			</header>
@@ -17,16 +66,133 @@
 						<div class="image fit flush">
 							<img src="/assets/pic02.jpg" alt="" />
 						</div>
-						<header class="special">
+						<header class="special" id="about">
 							<h2>About</h2>
 							<p>Vinci talents</p>
 						</header>
 						<div class="content">
-							<p>About Vinci talents</p>
+							<p>One of the biggest talent agencies in the world, United Talent Agency represents many of the world’s most acclaimed figures in every current and emerging area of entertainment and media, including motion pictures, television, music, digital, broadcast news, books, theatre, video games, fine art and live entertainment. The agency is also globally recognized in the areas of film finance, film packaging, branding, licensing, endorsements and representation of production talent. UTA additionally provides corporate consulting, venture funding and strategic advisory services to companies ranging from start-ups to Fortune 500 companies. In 2015, UTA acquired The Agency Group, the world’s largest independent music agency, to form UTA Music, a leading music touring and representation practice. UTA has offices in Los Angeles, New York, London, Nashville, Miami, and Malmo, Sweden.
+							</p>
 						</div>
 					</section>
-
-				<!-- Two -->
+					<!-- Three -->
+					<section id="three" class="wrapper style2">
+						<header class="special" id="ourworks">
+							<h2>Our Works</h2>
+							<p>Vinci talents</p>
+						</header>					
+					</section>
+					<!-- Three -->
+					<section id="four" class="wrapper style2">
+						<header class="special" id="service">
+							<h2>Services</h2>
+							<p>Vinci talents</p>
+						</header>
+						<div>
+							<div class="flex flex-wrap -m-3"> 
+							  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+							    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="height: 250px">
+							      <div class="p-4 flex-1 flex flex-col" style="">
+							        <h3 class="mb-4 text-2xl" style="text-align: center; height: 80px">Celebrity management</h3>
+							        <div class="mb-4 text-grey-darker text-sm flex-1">
+							          <p style="text-align: center">Some text which describes what this section is about.</p>
+							        </div>
+							        <a href="#" class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
+							      </div>
+							    </div>  
+							  </div>
+							  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+							    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="height: 250px">
+							      <div class="p-4 flex-1 flex flex-col" style="">
+							        <h3 class="mb-4 text-2xl" style="text-align: center;height: 80px">Talent Management</h3>
+							        <div class="mb-4 text-grey-darker text-sm flex-1">
+							          <p style="text-align: center">Some text which describes what this section is about.</p>
+							        </div>
+							        <a href="#" class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
+							      </div>
+							    </div>  
+							  </div>	  
+							  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+							    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="height: 250px">
+							      <div class="p-4 flex-1 flex flex-col" style="">
+							        <h3 class="mb-4 text-2xl" style="text-align: center;height: 80px">Artist Management</h3>
+							        <div class="mb-4 text-grey-darker text-sm flex-1">
+							          <p style="text-align: center">Some text which describes what this section is about.</p>
+							        </div>
+							        <a href="#" class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
+							      </div>
+							    </div>  
+							  </div>
+								<div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+							    <div class="bg-white rounded-lg shadow-lg overflow-hidden  flex flex-col" style="height: 250px">
+							      <div class="p-4 flex-1 flex flex-col" style="">
+							        <h3 class="mb-4 text-2xl" style="text-align: center;height: 80px">Event Management</h3>
+							        <div class="mb-4 text-grey-darker text-sm flex-1">
+							          <p style="text-align: center">Some text which describes what this section is about.</p>
+							        </div>
+							        <a href="#" class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
+							      </div>
+							    </div>  
+							  </div>
+							  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+							    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="height: 250px">
+							      <div class="p-4 flex-1 flex flex-col" style="">
+							        <h3 class="mb-4 text-2xl" style="text-align: center;height: 80px">Shoot with celeb</h3>
+							        <div class="mb-4 text-grey-darker text-sm flex-1">
+							          <p style="text-align: center">Some text which describes what this section is about.</p>
+							        </div>
+							        <a href="#" class="border-t border-grey-light pt-2  text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
+							      </div>
+							    </div>  
+							  </div>							  
+							  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+							    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="height: 250px">
+							      <div class="p-4 flex-1 flex flex-col" style="">
+							        <h3 class="mb-4 text-2xl" style="text-align: center;height: 80px">Holiday with celeb</h3>
+							        <div class="mb-4 text-grey-darker text-sm flex-1">
+							          <p style="text-align: center">Some text which describes what this section is about.</p>
+							        </div>
+							        <a href="#" class="border-t border-grey-light pt-2  text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Twitter</a>
+							      </div>
+							    </div>  
+							  </div>
+							  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+							    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="height: 250px">
+							      <div class="p-4 flex-1 flex flex-col" style="">
+							        <h3 class="mb-4 text-2xl" style="text-align: center;height: 80px">Portfolio shootg</h3>
+							        <div class="mb-4 text-grey-darker text-sm flex-1">
+							          <p style="text-align: center">Some text which describes what this section is about.</p>
+							        </div>
+							        <a href="#" class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
+							      </div>
+							    </div>  
+							  </div>
+							  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+							    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="height: 250px">
+							      <div class="p-4 flex-1 flex flex-col" style="">
+							        <h3 class="mb-4 text-2xl" style="text-align: center;height: 80px">Modeling acting and grooming classes</h3>
+							        <div class="mb-4 text-grey-darker text-sm flex-1">
+							          <p style="text-align: center">Some text which describes what this section is about.</p>
+							        </div>
+							        <a href="#" class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
+							      </div>
+							    </div>  
+							  </div>	  
+							  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+							    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="height: 250px">
+							      <div class="p-4 flex-1 flex flex-col" style="">
+							        <h3 class="mb-4 text-2xl" style="text-align: center; height: 80px">S affairs ( Inspiring interviews )</h3>
+							        <div class="mb-4 text-grey-darker text-sm flex-1">
+							          <p style="text-align: center">Some text which describes what this section is about.</p>
+							        </div>
+							        <a href="#" class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
+							      </div>
+							    </div>  
+							  </div>
+							</div>
+						</div>						
+					</section>
+					<!-- Two -->
 					<section id="two" class="wrapper style2">
 						<header>
 							<h2>Create your profile</h2>
@@ -43,9 +209,7 @@
 						</div>
 					</section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper">						
-					</section>
+				
 
 				</div>
 			</section>
@@ -63,4 +227,21 @@
 				<div class="copyright">
 					&copy; Vinci Talents. All rights reserved.
 				</div>
-			</footer>			
+			</footer>		
+
+			<script type="text/javascript">
+				$( '.sidenav a' ).on( 'click', function(e){
+	
+				  // Define variable of the clicked »a« element (»this«) and get its href value.
+				  var href = $(this).attr( 'href' );
+				  
+				  // Run a scroll animation to the position of the element which has the same id like the href value.
+				  $( 'html, body' ).animate({
+						scrollTop: $( href ).offset().top
+				  }, '300' );
+					
+				  // Prevent the browser from showing the attribute name of the clicked link in the address bar
+				  e.preventDefault();
+
+				});
+			</script>	
