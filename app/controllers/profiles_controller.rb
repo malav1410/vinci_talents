@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  skip_before_filter :verify_authenticity_token
+  before_action :authenticate_user!, only: [:search]
+  #skip_before_filter :verify_authenticity_token
 
   def new
   	@profile = Profile.new
@@ -14,6 +15,10 @@ class ProfilesController < ApplicationController
       # would have been to render the "create" view.
       render "new"
     end
+  end
+
+  def search
+    
   end
 
   def submit
