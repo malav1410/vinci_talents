@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180919142834) do
+ActiveRecord::Schema.define(version: 20181111200454) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -69,6 +69,22 @@ ActiveRecord::Schema.define(version: 20180919142834) do
     t.string   "video_2_content_type"
     t.integer  "video_2_file_size"
     t.datetime "video_2_updated_at"
+    t.string   "instagram_url"
+    t.string   "city"
+    t.string   "country"
+    t.string   "state"
+    t.integer  "sex"
+    t.decimal  "height"
+    t.decimal  "weight"
+    t.decimal  "bust"
+    t.decimal  "waist"
+    t.decimal  "hips"
+    t.string   "eye_color"
+    t.decimal  "shoe_size"
+    t.string   "hair"
+    t.text     "about"
+    t.text     "empowers"
+    t.integer  "representation"
   end
 
   create_table "users", force: :cascade do |t|

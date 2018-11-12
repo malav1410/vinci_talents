@@ -40,7 +40,7 @@ gem 'rails_admin_rollincode', '~> 1.0'
 gem "devise"
 
 gem 'simple_form'
-
+gem 'country_select', '~> 3.1'
 gem "figaro"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

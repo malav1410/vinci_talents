@@ -32,6 +32,6 @@ class ProfilesController < ApplicationController
   private
     
     def person_params
-      params.require(:profile).permit(:first_name, :last_name, :email, :mobile, :age, :photo_1, :photo_2, :photo_3, :photo_4, :photo_5, :photo_6, :video_1, :video_2)
+      params.require(:profile).permit(:first_name, :last_name, :email, :mobile, :age, :photo_1, :photo_2, :photo_3, :photo_4, :photo_5, :photo_6, :video_1, :video_2, :instagram_url, :city, :country, :state, :sex, :height, :weight, :bust, :waist, :hips, :eye_color, :shoe_size, :hair, :about, :empowers, :representation)
     end
 end

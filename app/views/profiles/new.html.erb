@@ -17,7 +17,7 @@
 					<%= simple_form_for @profile do |f| %>
 
 						<%= f.error_notification %>
-
+						<label>Contact Info: </label>
 					  <%= f.input :first_name, label: false, placeholder: 'First Name', required: true %>
 
 					  <%= f.input :last_name, label: false, placeholder: 'Last Name', required: true %>
@@ -28,7 +28,146 @@
 
 					  <%= f.input :age, label: false, placeholder: 'Age', boolean_style: :inline ,input_html: { class: "mr-sm-2" }, required: true %>
 
-					  <div style="margin-bottom: 20px">
+					  <%= f.input :city, label: false, placeholder: 'City', required: true %>
+					  <%= f.input :state, label: false, placeholder: 'State', required: true %>
+					  <div class="row">
+							<div class="col-md-6">
+								<%= f.input :country, label: 'Country', placeholder: 'Country' %>
+							</div>
+							<div class="col-md-6">
+								<%= f.input :sex, as: :select, collection: Profile.sexes %>
+							</div>
+						</div>
+					  
+					  
+
+					  <label style="margin-top:	80px">Photos: </label>
+					  <div class="row">
+							<div class="container col-md-2">
+						    <div class="avatar-upload">
+						        <div class="avatar-edit">
+						            <input type='file' name="profile[photo_1]" id="imageUpload1" accept=".png, .jpg, .jpeg" />
+						            <label for="imageUpload1"><i class="fas fa-pencil-alt" style="position: absolute; left: 25%; top: 25%;"></i></label>
+						        </div>
+						        <div class="avatar-preview">
+						            <div id="imagePreview1" style="background-image: url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-1.jpg);">
+						            </div>
+						        </div>
+						    </div>
+						    <h5 style="text-align: center; height: 80px">full length</h5>
+							</div>
+							<div class="container col-md-2">
+						    <div class="avatar-upload">
+						        <div class="avatar-edit">
+						            <input type='file' name="profile[photo_2]" id="imageUpload2" accept=".png, .jpg, .jpeg" />
+						            <label for="imageUpload2"><i class="fas fa-pencil-alt" style="position: absolute; left: 25%; top: 25%;"></i></label>
+						        </div>
+						        <div class="avatar-preview">
+						            <div id="imagePreview2" style="background-image: url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-2.jpg);">
+						            </div>
+						        </div>
+						    </div>
+						    <h5 style="text-align: center; height: 80px">full length profile</h5>
+							</div>
+							<div class="container col-md-2">
+						    <div class="avatar-upload">
+						        <div class="avatar-edit">
+						            <input type='file' name="profile[photo_3]" id="imageUpload3" accept=".png, .jpg, .jpeg" />
+						            <label for="imageUpload3"><i class="fas fa-pencil-alt" style="position: absolute; left: 25%; top: 25%;"></i></label>
+						        </div>
+						        <div class="avatar-preview">
+						            <div id="imagePreview3" style="background-image: url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-3.jpg);">
+						            </div>
+						        </div>
+						    </div>
+						    <h5 style="text-align: center; height: 80px">portrait length</h5>
+							</div>
+							<div class="container col-md-2">
+						    <div class="avatar-upload">
+						        <div class="avatar-edit">
+						            <input type='file' name="profile[photo_4]" id="imageUpload4" accept=".png, .jpg, .jpeg" />
+						            <label for="imageUpload4"><i class="fas fa-pencil-alt" style="position: absolute; left: 25%; top: 25%;"></i></label>
+						        </div>
+						        <div class="avatar-preview">
+						            <div id="imagePreview4" style="background-image: url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-4.jpg);">
+						            </div>
+						        </div>
+						    </div>
+						    <h5 style="text-align: center; height: 80px">close up
+						    	<small>(hair pulled back)</small>
+						    </h5>
+							</div>
+							<div class="container col-md-2">
+						    <div class="avatar-upload">
+						        <div class="avatar-edit">
+						            <input type='file' name="profile[photo_5]" id="imageUpload5" accept=".png, .jpg, .jpeg" />
+						            <label for="imageUpload5"><i class="fas fa-pencil-alt" style="position: absolute; left: 25%; top: 25%;"></i></label>
+						        </div>
+						        <div class="avatar-preview">
+						            <div id="imagePreview5" style="background-image: url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-5.jpg);">
+						            </div>
+						        </div>
+						    </div>
+						    <h5 style="text-align: center; height: 80px">close up profile
+						    	<small>(hair pulled back)</small>
+						    </h5>
+							</div>
+							<div class="container col-md-2">
+						    <div class="avatar-upload">
+						        <div class="avatar-edit">
+						            <input type='file' name="profile[photo_6]" id="imageUpload6" accept=".png, .jpg, .jpeg" />
+						            <label for="imageUpload6"><i class="fas fa-pencil-alt" style="position: absolute; left: 25%; top: 25%;"></i></label>
+						        </div>
+						        <div class="avatar-preview">
+						            <div id="imagePreview6" style="background-image: url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-6.jpg);">
+						            </div>
+						        </div>
+						    </div>
+						    <h5 style="text-align: center; height: 80px">personality pic
+						    	<small>(smiles are ok here)</small>
+						    </h5>
+							</div>
+						</div>
+
+						<label style="margin-top: 80px">Measurements: </label>
+						<div class="row">
+							<div class="col-md-6">
+								<%= f.input :height, label: false, placeholder: 'Height(CM)', required: true %>
+							</div>
+							<div class="col-md-6">
+								<%= f.input :weight, label: false, placeholder: 'Weight(KG)', required: true %>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<%= f.input :bust, label: false, placeholder: 'Bust(CM)', required: true %>
+							</div>
+							<div class="col-md-6">
+								<%= f.input :waist, label: false, placeholder: 'Waist(CM)', required: true %>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<%= f.input :hips, label: false, placeholder: 'Hips(CM)', required: true %>
+							</div>
+							<div class="col-md-6">
+								<%= f.input :shoe_size, label: false, placeholder: 'Shoe Size', required: true %>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<%= f.input :eye_color, label: false, placeholder: 'Eye Color', required: true %>
+							</div>
+							<div class="col-md-6">
+								<%= f.input :hair, label: false, placeholder: 'Hair', required: true %>
+							</div>
+						</div>
+
+						<label style="margin-top:	80px">Your Story: </label>
+						<%= f.input :about, label: false, placeholder: 'Briefly tell us about yourself.', required: true %>
+						<%= f.input :empowers, label: false, placeholder: 'What empowers you?', required: true %>
+						<%= f.input :representation, as: :select, collection: Profile.representations %>
+					  <!-- <div style="margin-bottom: 20px">
 					  	<a href="#" ng-click="togglePhotos()"> Add Photos ( You can add upto 6 photos )</a>
 					  </div>
 
@@ -36,21 +175,127 @@
 					  	<%= f.input :photo_1, label: false, as: :file %>
 					  	<%= f.input :photo_2, label: false, as: :file %>
 					  	<%= f.input :photo_3, label: false, as: :file %>
-					  </div>
+					  </div> -->
 
-					  <div style="margin-bottom: 20px">
+					  <!-- <div style="margin-bottom: 20px">
 					  	<a href="#" ng-click="toggleVideos()"> Add Videos ( You can add upto 2 videos )</a>
 					  </div>
 
 					  <div ng-if="addVideos">
 					  	<%= f.input :video_1, label: false, as: :file %>
 					  	<%= f.input :video_2, label: false, as: :file %>
-					  </div>
+					  </div> -->
 					  
 
 					  <%= f.button :submit %>
 					<% end %>
 				<!-- Form -->						
+			</div>
+			
+			<div style="display: none">
+				<div class="sm_photoImg_block">
+            <div class="smPhoto_list">
+                <div class="sm_photoId1 smPhoto_genID" style="background-image:url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-1.jpg);" onclick="triggeruploadimg(this,'out');"></div>
+                <!--<img onclick="triggeruploadimg(this,'out');" src="https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-1.jpg" width="100%" height="" class="smImg_photo">-->
+                <div class="sm_fileUpload">
+                    <span class="sm_uploadBtn"></span>
+                    <div class="clear"></div>
+                    <input accept="image/*" id="id_image1" name="image1" onchange="selecteimg(this)" type="file">
+                    
+                    <div class="clear"></div>
+                    <span class="sm_photoDesc">
+                        full length
+                    </span>
+                </div>
+                <p class="smPhoto_desc">no image selected</p>
+            </div>
+            <div class="smPhoto_list">
+                <div class="sm_photoId2 smPhoto_genID" style="background-image:url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-2.jpg);" onclick="triggeruploadimg(this,'out');"></div>
+                <!--<img onclick="triggeruploadimg(this,'out');" src="https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-2.jpg" width="100%" height="" class="smImg_photo">-->
+                <div class="sm_fileUpload">
+                    <span class="sm_uploadBtn"></span>
+                    <div class="clear"></div>
+                    <input accept="image/*" id="id_image2" name="image2" onchange="selecteimg(this)" type="file">
+                    
+                    <div class="clear"></div>
+                    <span class="sm_photoDesc">
+                        full length profile
+                    </span>
+                </div>
+                <p class="smPhoto_desc">no image selected</p>
+            </div>
+            <div class="smPhoto_list">
+                <div class="sm_photoId3 smPhoto_genID" style="background-image:url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-3.jpg);" onclick="triggeruploadimg(this,'out');"></div>
+                <!--<img onclick="triggeruploadimg(this,'out');" src="https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-3.jpg" width="100%" height="" class="smImg_photo">-->
+
+                <div class="sm_fileUpload">
+                    <span class="sm_uploadBtn"></span>
+                    <div class="clear"></div>
+                    <input accept="image/*" id="id_image3" name="image3" onchange="selecteimg(this)" type="file">
+                    
+                    <div class="clear"></div>
+                    <span class="sm_photoDesc">
+                        portrait length
+                    </span>
+                </div>
+                <p class="smPhoto_desc">no image selected</p>
+            </div>
+            <div class="smPhoto_list">
+                <div class="sm_photoId4 smPhoto_genID" style="background-image:url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-4.jpg);" onclick="triggeruploadimg(this,'out');"></div>
+                <!--<img onclick="triggeruploadimg(this,'out');" src="https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-4.jpg" width="100%" height="" class="smImg_photo">-->
+
+                <div class="sm_fileUpload">
+                    <span class="sm_uploadBtn"></span>
+                    <div class="clear"></div>
+                    <input accept="image/*" id="id_image4" name="image4" onchange="selecteimg(this)" type="file">
+                    
+                    <div class="clear"></div>
+                    <span class="sm_photoDesc">
+                        close up
+                      
+                        <small>(hair pulled back)</small>
+                      
+                    </span>
+                </div>
+                <p class="smPhoto_desc">no image selected</p>
+            </div>
+            <div class="smPhoto_list">
+                <div class="sm_photoId5 smPhoto_genID" style="background-image:url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-5.jpg);" onclick="triggeruploadimg(this,'out');"></div>
+                <!--<img onclick="triggeruploadimg(this,'out');" src="https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-5.jpg" width="100%" height="" class="smImg_photo">-->
+                <div class="sm_fileUpload">
+                    <span class="sm_uploadBtn"></span>
+                    <div class="clear"></div>
+                    <input accept="image/*" id="id_image5" name="image5" onchange="selecteimg(this)" type="file">
+                    
+                    <div class="clear"></div>
+                    <span class="sm_photoDesc">
+                         close up profile
+                       
+                        <small>(hair pulled back)</small>
+                       
+                    </span>
+                </div>
+                <p class="smPhoto_desc">no image selected</p>
+            </div>
+            <div class="smPhoto_list">
+                <div class="sm_photoId6 smPhoto_genID" style="background-image:url(https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-6.jpg);" onclick="triggeruploadimg(this,'out');"></div>
+                <!--<img onclick="triggeruploadimg(this,'out');" src="https://elite-v2.s3.amazonaws.com/static/elite/images/Submission-Photo-6.jpg" width="100%" height="" class="smImg_photo">-->
+                <div class="sm_fileUpload">
+                    <span class="sm_uploadBtn"></span>
+                    <div class="clear"></div>
+                    <input accept="image/*" id="id_image6" name="image6" onchange="selecteimg(this)" type="file">
+                    
+                    <div class="clear"></div>
+                    <span class="sm_photoDesc">
+                         personality pic
+                      
+                        <small>(smiles are ok here)</small>
+                      
+                    </span>
+                </div>
+                <p class="smPhoto_desc">no image selected</p>
+            </div>
+        </div>
 			</div>
 		</section>
 	</div>
@@ -68,3 +313,34 @@
 		&copy; Vinci Talents. All rights reserved.
 	</div>
 </footer>
+<script type="text/javascript">
+	function readURL(input, preview) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $(preview).css('background-image', 'url('+e.target.result +')');
+            $(preview).hide();
+            $(preview).fadeIn(650);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#imageUpload1").change(function() {
+    readURL(this, '#imagePreview1');
+});
+$("#imageUpload2").change(function() {
+    readURL(this, '#imagePreview2');
+});
+$("#imageUpload3").change(function() {
+    readURL(this, '#imagePreview3');
+});
+$("#imageUpload4").change(function() {
+    readURL(this, '#imagePreview4');
+});
+$("#imageUpload5").change(function() {
+    readURL(this, '#imagePreview5');
+});
+$("#imageUpload6").change(function() {
+    readURL(this, '#imagePreview6');
+});
+</script>
