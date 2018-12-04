@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.poptrox.min
 //= require main
+//= require filterrific/filterrific-jquery
 //= require skel.min
 //= require util
 //= require turbolinks

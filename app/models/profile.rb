@@ -70,16 +70,46 @@ class Profile < ApplicationRecord
   		:no => 20,
   	}
 
- validates :first_name, :last_name, :mobile, :age, presence: false
- validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
- validates :age, numericality: { greater_than: 0 }
- validates_length_of :mobile, minimum: 10, maximum: 10
- validates_attachment_content_type :photo_1, :content_type => /\Aimage\/.*\Z/
- validates_attachment_content_type :photo_2, :content_type => /\Aimage\/.*\Z/
- validates_attachment_content_type :photo_3, :content_type => /\Aimage\/.*\Z/
- validates_attachment_content_type :photo_4, :content_type => /\Aimage\/.*\Z/
- validates_attachment_content_type :photo_5, :content_type => /\Aimage\/.*\Z/
- validates_attachment_content_type :photo_6, :content_type => /\Aimage\/.*\Z/
+	validates :first_name, :last_name, :mobile, :age, presence: false
+	validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+	validates :age, numericality: { greater_than: 0 }
+	validates_length_of :mobile, minimum: 10, maximum: 10
+	validates_attachment_content_type :photo_1, :content_type => /\Aimage\/.*\Z/
+	validates_attachment_content_type :photo_2, :content_type => /\Aimage\/.*\Z/
+	validates_attachment_content_type :photo_3, :content_type => /\Aimage\/.*\Z/
+	validates_attachment_content_type :photo_4, :content_type => /\Aimage\/.*\Z/
+	validates_attachment_content_type :photo_5, :content_type => /\Aimage\/.*\Z/
+	validates_attachment_content_type :photo_6, :content_type => /\Aimage\/.*\Z/
 
- validates_uniqueness_of :email, :mobile
+	validates_uniqueness_of :email, :mobile
+
+	scope :sorted_by, lambda { |sort_option|
+	
+	  direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
+	  case sort_option.to_s
+	  when /^first_name/
+	    order("LOWER(profiles.first_name) #{ direction }")
+	  when /^email/
+	    order("LOWER(profiles.email) #{ direction }")
+	  else
+	    raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
+	  end
+	}
+
+	filterrific(
+	   default_filter_params: { sorted_by: 'email' },
+	   available_filters: [
+	     :sorted_by,
+	     :search_query,
+	   ]
+	)
+
+# define ActiveRecord scopes for
+# :search_query, :sorted_by, :with_country_id, and :with_created_at_gte
+
+	def full_name
+		first_name + " " + last_name
+	end
+
+
 end

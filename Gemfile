@@ -42,6 +42,10 @@ gem "devise"
 gem 'simple_form'
 gem 'country_select', '~> 3.1'
 gem "figaro"
+
+gem 'will_paginate', '~> 3.1.1'
+# Filter active records
+gem 'filterrific'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,0 +1,24 @@
+<%# app/views/profiles/_list.html.erb %>
+<div id="filterrific_results">
+
+  <div>
+    <%= page_entries_info profiles %>
+  </div>
+
+  <table>
+    <tr>
+      <th><%= filterrific_sorting_link(@filterrific, :first_name) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :email) %></th>
+      <th>Country</th>
+      <th>Registered at</th>
+    </tr>
+    <% profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.full_name %></td>
+        <td><%= profile.email %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!--  -->

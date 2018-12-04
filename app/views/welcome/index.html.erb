@@ -1,55 +1,3 @@
-<style>
-  .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 10002;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  }
-
-  .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-  }
-
-  .sidenav a:hover {
-      color: #f1f1f1;
-  }
-
-  .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-  }
-
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-
-</style>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#about">About</a>
-  <a href="#service">Services</a>
-  <a href="#ourworks">Our Talents</a>
-  <a href="#create_profile">Create Profile</a>
-  <!-- <a href="#news">News / Trending section</a> -->
-</div> 
-
-<span style="font-size:30px;cursor:pointer; color: white; margin-left: 35px; position: fixed; top: 20px" onclick="openNav()">&#9776;</span>
-
 		<!-- Header -->
 			<header id="header">
 				<div class="logo">
@@ -61,7 +9,13 @@
 		<!-- Main -->
 			<section id="main">
 				<div class="inner">
-
+					<div class="rc_nav" id="centered_nav">
+						<a href="javascript:void(0);" title="Menu" style="font-size:18px;" class="icon" onclick="myFunction()">&#9776;</a>
+						<a href="#about">About</a>
+					  <a href="#service">Services</a>
+					  <a href="#ourworks">Our Talents</a>
+					  <a href="#create_profile">Create Profile</a>
+					</div>
 				<!-- One -->
 					<section id="one" class="wrapper style1">
 
@@ -136,7 +90,7 @@
 							        <div class="mb-4 text-grey-darker text-sm flex-1">
 							          <p style="text-align: center">Celebrate an awesome day meeting & greeting your favourite celebrities we have on board and also enjoy a fabulous photoshoot session with them.</p>
 							        </div>
-							        <a href="shoot_with_celebrity" class="border-t border-grey-light pt-2  text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
+							        <a href="http://shootwithcelebs.com/" class="border-t border-grey-light pt-2  text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;" target="_blank">Read more..</a>
 							      </div>
 							    </div>  
 							  </div>							  
@@ -147,7 +101,7 @@
 							        <div class="mb-4 text-grey-darker text-sm flex-1">
 							          <p style="text-align: center">An opportunity by VINCI talents specially for you guys to enjoy a whole day with our Celebrities in our most luxurious and beautiful 5 star properties and resorts so you can enjoy a life of a celebrity.</p>
 							        </div>
-							        <a href="holiday_with_celebrity" class="border-t border-grey-light pt-2  text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Twitter</a>
+							        <a href="holiday_with_celebrity" class="border-t border-grey-light pt-2  text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
 							      </div>
 							    </div>  
 							  </div>
@@ -167,7 +121,7 @@
 							      <div class="p-4 flex-1 flex flex-col" style="">
 							        <h3 class="mb-4 text-2xl" style="text-align: center;height: 50px">Modeling acting and grooming classes</h3>
 							        <div class="mb-4 text-grey-darker text-sm flex-1">
-							          <p style="text-align: center">Interested in acting? Do you aspire of being an actor? If yes then we will help you achieve it. Get an acting and grooming course we provide where you will receive training from actors, casting directors, and others along with a grooming session who will help you understand your style.</p>
+							          <p style="text-align: center">Get an acting and grooming course we provide where you will receive training from actors, casting directors, and others along with a grooming session who will help you understand your style.</p>
 							        </div>
 							        <a href="modeling_acting_and_grooming_classes" class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide" style="margin: 0px auto;">Read more..</a>
 							      </div>
@@ -363,23 +317,16 @@
 				<div class="copyright">
 					&copy; Vinci Talents. All rights reserved.
 				</div>
-			</footer>		
-
+			</footer>	
 			<script type="text/javascript">
-				$( '.sidenav a' ).on( 'click', function(e){
-	
-				  // Define variable of the clicked »a« element (»this«) and get its href value.
-				  var href = $(this).attr( 'href' );
-				  
-				  // Run a scroll animation to the position of the element which has the same id like the href value.
-				  $( 'html, body' ).animate({
-						scrollTop: $( href ).offset().top
-				  }, '300' );
-					
-				  // Prevent the browser from showing the attribute name of the clicked link in the address bar
-				  e.preventDefault();
-
-				});
+				function myFunction() {
+			    var x = document.getElementById("centered_nav");
+			    if (x.className === "rc_nav") {
+			        x.className += " responsive";
+			    } else {
+			        x.className = "rc_nav";
+			    }
+				}
 			</script>	
 
 			<script type="text/javascript">
